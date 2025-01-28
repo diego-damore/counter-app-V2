@@ -1,70 +1,52 @@
 # Getting Started with Create React App
+Counter App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una semplice applicazione di un contatore in React, che ti permette di incrementare, decrementare e resettare il valore di un contatore. L'app supporta anche il tema chiaro e scuro, oltre a una personalizzazione dell'interfaccia con uno stile in tema "country".
+Funzionalità
 
-## Available Scripts
+    Contatore: Visualizza un numero che puoi incrementare e decrementare.
+    Pulsanti: Pulsanti per incrementare (+1), decrementare (-1) e resettare (a 0) il contatore.
+    Tema Chiaro/Scuro: Cambia il tema dell'app tra chiaro e scuro.
+    Stile personalizzato: Design "country" con sfondo e bordi personalizzati.
 
-In the project directory, you can run:
+Bonus implementati:
 
-### `npm start`
+    Tema chiaro/scuro.
+    Personalizzazione dell'interfaccia con uno stile "country".
+    Canzone di sottofondo (musica country) durante l'uso dell'app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installazione
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Segui questi passi per installare e avviare il progetto in locale:
 
-### `npm test`
+    Clona il repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Se non hai già una copia locale del progetto, clona il repository con il comando:
 
-### `npm run build`
+git clone https://github.com/diego-damore/counter-app.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Naviga nella cartella del progetto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cd counter-app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Installa le dipendenze:
 
-### `npm run eject`
+Usa npm per installare le dipendenze necessarie al progetto:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Avvia l'applicazione:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Dopo aver installato le dipendenze, avvia il server di sviluppo con:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm start
 
-## Learn More
+L'app verrà avviata su http://localhost:3000/. Apri il tuo browser e visita questo URL per vedere l'app in azione.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+difficoltà incontrate 
+è la prima volta che lavoro con git hub è un mondo tutto nuovo ho imparato a configurare il nome utente e la mail e verifificare che questo sia avvenuto correttamente 
+ho creato la chiave ssh ho avviato l'agente che si occupa della chiave privata e salvato quella pubblica nel sito di git hub.
+ho provato a  eseguire il comando npx create-react-app counter-app ma non funziona ho appreso che devo installare a il pacchetto web-vitals manualmente la sua mancanza creava problemi 
+ho creato il progetto avviato il server di test e ho modificato il pacchetto app.js con i dovuti file ora ho testato il contatore e funziona 
+ho creato migliorato lo stile e il codice grazie a chat gpt
