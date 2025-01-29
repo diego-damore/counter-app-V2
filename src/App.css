@@ -1,41 +1,84 @@
 /* Stili generali */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  color: #4e2a1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  transition: background-color 0.5s ease;
+  overflow: hidden;
+}
+
+/* Tema chiaro */
+body.light {
+  background-color: #f5f5dc; /* Beige */
+}
+
+/* Tema scuro */
+body.dark {
+  background-color: #5e3c2c; /* Marrone */
+}
+
+/* Immagine di sfondo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 20%; /* Distante dalla cima */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%; /* Dimensioni moderate */
+  height: 60%; /* Dimensioni moderate */
+  background-image: url('https://th-thumbnailer.cdn-si-edu.com/ZRkeg_s4WB4zGphFwIGcf3Qi6as=/1072x720/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/8f/7e/8f7ed7db-786d-4750-b2cb-494892b530a3/jun2015_h06_colorado.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  border-radius: 20px; /* Bordi arrotondati */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ombra per profondità */
+}
+
+/* Contenitore principale */
 .App {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace; /* Font rustico */
-  background-color: #f5f5dc; /* Colore di sfondo beige */
-  color: #4e2a1f; /* Colore testo marrone scuro */
   padding: 20px;
-  border-radius: 15px; /* Bordi arrotondati */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra leggera */
-  width: 80%;
-  margin: 0 auto;
-  max-width: 600px; /* Limita la larghezza per un aspetto più compatto */
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  z-index: 1; /* Assicura che il contenuto sia sopra l'immagine di sfondo */
 }
 
-/* Tema Chiaro */
-.App.light {
-  background-color: #f5f5dc;
-  color: #4e2a1f;
-}
-
-/* Tema Scuro */
+/* Tema scuro per il contenitore */
 .App.dark {
-  background-color: #3e2c2a; /* Colore scuro di sfondo */
-  color: #e8d7b9; /* Colore chiaro per il testo */
+  background-color: rgba(60, 34, 34, 0.8);
+  color: #f1e0c6; /* Testo più chiaro per il tema scuro */
 }
 
-/* Stile per il titolo */
-h1 {
+/* Titoli */
+.title-box {
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.country-title {
   font-size: 2em;
-  margin-bottom: 20px;
   font-weight: bold;
-  letter-spacing: 1px;
-  color: #6e4b3e;
+  text-shadow: 1px 1px 2px #000000, 0 0 10px #000000;
+  color: #4e2a1f;
 }
 
 /* Pulsanti */
 button {
-  background-color: #8b5e3c; /* Marrone chiaro per i pulsanti */
+  background-color: #8b5e3c;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -43,70 +86,103 @@ button {
   cursor: pointer;
   font-size: 18px;
   border-radius: 10px;
-  transition: background-color 0.3s;
-  font-family: 'Courier New', Courier, monospace; /* Font rustico anche per i pulsanti */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra più forte sui pulsanti */
+  transition: all 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-  background-color: #a67649; /* Colore di sfondo più scuro per hover */
+  background-color: #a67649;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Campo di input per lo step */
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: 2px solid #a67649;
+  outline-offset: 2px;
+}
+
+.App.dark button {
+  background-color: #5e3c2c;
+}
+
+.App.dark button:hover {
+  background-color: #704d3c;
+}
+
+/* Input */
 input[type="number"] {
   font-size: 18px;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
   border: 2px solid #8b5e3c;
-  background-color: #f1e0c6; /* Colore chiaro per il campo input */
+  background-color: #f1e0c6;
   font-family: 'Courier New', Courier, monospace;
+  transition: border-color 0.3s ease;
 }
 
-/* Stile per i pulsanti del tema */
-button:last-child {
-  background-color: #6e4b3e; /* Pulsante per il tema */
-}
-.App {
-  background-image: url('https://th-thumbnailer.cdn-si-edu.com/ZRkeg_s4WB4zGphFwIGcf3Qi6as=/1072x720/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/8f/7e/8f7ed7db-786d-4750-b2cb-494892b530a3/jun2015_h06_colorado.jpg'); /* Usa l'URL che hai copiato */
-  background-size: cover; /* L'immagine copre tutta la pagina */
-  background-position: center; /* Centra l'immagine */
-  background-repeat: no-repeat; /* Evita che l'immagine si ripeta */
-  color: #4e2a1f;
-  font-family: 'Courier New', Courier, monospace;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  margin: 0 auto;
-  max-width: 600px;
-}
-/* Titolo in stile Vecchio West */
-h1 { /* Se il titolo è dentro un h1, altrimenti cambia il selettore */
-  font-size: 3.5em; /* Rende il titolo leggermente più grande */
-  font-weight: bold; /* Rende il testo in grassetto */
-  text-align: center; /* Centra il titolo */
-  color: #4e2a1f; /* Colore marrone scuro */
-  font-family: 'Rockwell', sans-serif; /* Font in stile western, puoi usare un font diverso se lo preferisci */
-  text-shadow: 1px 1px 2px #000000, 0 0 25px #000000; /* Ombra per effetto rustico */
-  margin-bottom: 20px; /* Spazio sotto il titolo */
-  letter-spacing: 2px; /* Aggiunge uno spazio tra le lettere per un effetto western */
-  border: 3px solid #000000; /* Bordo sottile di colore nero */
-  padding: 8px; /* Distanza tra il testo e il bordo */
-  border-radius: 5px; /* Angoli arrotondati per un look più delicato */
+input[type="number"]:focus {
+  border-color: #a67649;
+  outline: none;
 }
 
-/* Alternativa con uno sfondo rustico e bordo più fine */
-h1 {
-  font-size: 3.5em; /* Riduci la dimensione del titolo */
-  font-weight: bold;
-  text-align: center;
-  color: #4e2a1f; /* Colore marrone scuro */
-  font-family: 'Rockwell', sans-serif; /* Font western */
-  text-shadow: 1px 1px 2px #000000, 0 0 10px #000000; /* Ombra per effetto rustico */
-  margin-bottom: 20px;
-  border: 3px solid #000000; /* Bordo nero sottile */
-  padding: 10px 20px; /* Più padding per separare meglio il testo dal bordo */
-  background-color: rgba(255, 255, 255, 0.6); /* Sfondo semi-trasparente per effetto vintage */
-  border-radius: 8px; /* Angoli arrotondati */
+.App.dark input[type="number"] {
+  background-color: #6e4b3e;
+  color: white;
+  border-color: #5e3c2c;
 }
+
+.App.dark input[type="number"]:focus {
+  border-color: #a67649;
+}
+
+/* Output Palindrome */
+.palindrome-output {
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+/* Icona impostazioni */
+.settings-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.settings-icon:hover {
+  transform: rotate(90deg);
+}
+
+/* Menu impostazioni */
+.settings-menu {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #8b5e3c;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.settings-menu.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.App.dark .settings-menu {
+  background-color: rgba(60, 34, 34, 0.9);
+   }   

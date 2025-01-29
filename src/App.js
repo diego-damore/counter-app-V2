@@ -2,45 +2,62 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  // Recupera il valore del contatore da localStorage, se esiste
   const savedCount = localStorage.getItem('count');
   const initialCount = savedCount ? Number(savedCount) : 0;
+  const savedTheme = localStorage.getItem('theme') === 'dark';
 
-  // Stato per il contatore
   const [count, setCount] = useState(initialCount);
-
-  // Stato per il tema (chiaro o scuro)
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Stato per lo step personalizzato
+  const [isDarkMode, setIsDarkMode] = useState(savedTheme);
   const [step, setStep] = useState(1);
+  const [number, setNumber] = useState('');
+  const [result, setResult] = useState(null);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
-  // Funzioni per incrementare, decrementare e resettare il contatore
+  useEffect(() => {
+    document.body.className = isDarkMode ? 'dark' : 'light';
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
   const increment = () => {
     const newCount = count + step;
     setCount(newCount);
-    localStorage.setItem('count', newCount);  // Salva il nuovo valore in localStorage
+    localStorage.setItem('count', newCount);
   };
 
   const decrement = () => {
     const newCount = count > 0 ? count - step : 0;
     setCount(newCount);
-    localStorage.setItem('count', newCount);  // Salva il nuovo valore in localStorage
+    localStorage.setItem('count', newCount);
   };
 
   const reset = () => {
     setCount(0);
-    localStorage.setItem('count', 0);  // Salva il reset in localStorage
+    localStorage.setItem('count', 0);
   };
 
-  // Funzione per cambiare il tema
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  const checkPalindrome = () => {
+    const strNum = number.toString();
+    const isPalindrome = strNum === strNum.split('').reverse().join('');
+    setResult(isPalindrome);
+  };
+
   return (
     <div className={`App ${isDarkMode ? 'dark' : 'light'}`}>
-      <h1>Contatore: {count}</h1>
+      <div className="settings-icon" onClick={() => setSettingsOpen(!settingsOpen)}>
+        ⚙️
+      </div>
+
+      <div className={`settings-menu ${settingsOpen ? 'visible' : ''}`}>
+        <button className="theme-toggle-button" onClick={toggleTheme}>
+          {isDarkMode ? 'Tema Chiaro' : 'Tema Scuro'}
+        </button>
+      </div>
+
+      <h1 className="title-box country-title">Contatore: {count}</h1>
 
       <label htmlFor="stepInput">Passo:</label>
       <input
@@ -51,15 +68,31 @@ function App() {
         min="1"
       />
 
-      <div>
+      <div className="button-group">
         <button onClick={increment}>+{step}</button>
         <button onClick={decrement}>-{step}</button>
         <button onClick={reset}>Reset</button>
       </div>
 
-      <button onClick={toggleTheme}>
-        {isDarkMode ? 'Tema Chiaro' : 'Tema Scuro'}
+      <h2 className="title-box country-title">Verifica se un numero è palindromo</h2>
+      <input
+        type="number"
+        className="palindrome-input"
+        value={number}
+        onChange={(e) => setNumber(e.target.value)}
+        placeholder="Inserisci un numero"
+      />
+      <button className="palindrome-button" onClick={checkPalindrome}>
+        Verifica
       </button>
+      {result !== null && (
+        <div
+          className="palindrome-output title-box country-title"
+          style={{ color: result ? 'green' : 'red' }}
+        >
+          {result ? 'Il numero è palindromo!' : 'Il numero non è palindromo!'}
+        </div>
+      )}
     </div>
   );
 }
