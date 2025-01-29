@@ -16,29 +16,21 @@ body {
 /* Tema chiaro */
 body.light {
   background-color: #f5f5dc; /* Beige */
+  background-image: url('https://www.fulltravel.it/wp-content/uploads/2020/01/Route-66-Stati-Uniti.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Tema scuro */
 body.dark {
   background-color: #5e3c2c; /* Marrone */
-}
-
-/* Immagine di sfondo */
-body::before {
-  content: "";
-  position: fixed;
-  top: 20%; /* Distante dalla cima */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%; /* Dimensioni moderate */
-  height: 60%; /* Dimensioni moderate */
-  background-image: url('https://th-thumbnailer.cdn-si-edu.com/ZRkeg_s4WB4zGphFwIGcf3Qi6as=/1072x720/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/8f/7e/8f7ed7db-786d-4750-b2cb-494892b530a3/jun2015_h06_colorado.jpg');
+  background-image: url('https://pixelz.cc/wp-content/uploads/2016/11/the-maroon-bells-elk-mountains-rockies-colorado-united-states-4k-wallpaper.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -1;
-  border-radius: 20px; /* Bordi arrotondati */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ombra per profondità */
+  background-attachment: fixed;
 }
 
 /* Contenitore principale */
@@ -50,13 +42,13 @@ body::before {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 600px;
-  z-index: 1; /* Assicura che il contenuto sia sopra l'immagine di sfondo */
+  z-index: 1;
 }
 
 /* Tema scuro per il contenitore */
 .App.dark {
   background-color: rgba(60, 34, 34, 0.8);
-  color: #f1e0c6; /* Testo più chiaro per il tema scuro */
+  color: #f1e0c6;
 }
 
 /* Titoli */
@@ -185,4 +177,4 @@ input[type="number"]:focus {
 
 .App.dark .settings-menu {
   background-color: rgba(60, 34, 34, 0.9);
-   }   
+}
