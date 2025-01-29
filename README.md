@@ -44,9 +44,37 @@ npm start
 L'app verrà avviata su http://localhost:3000/. Apri il tuo browser e visita questo URL per vedere l'app in azione.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 difficoltà incontrate 
 è la prima volta che lavoro con git hub è un mondo tutto nuovo ho imparato a configurare il nome utente e la mail e verifificare che questo sia avvenuto correttamente 
-ho creato la chiave ssh ho avviato l'agente che si occupa della chiave privata e salvato quella pubblica nel sito di git hub.
+ho creato la chiave ssh ho avviato l'agente che si occupa della chiave privata,ho salvato quella pubblica nel sito di git hub.
 ho provato a  eseguire il comando npx create-react-app counter-app ma non funziona ho appreso che devo installare a il pacchetto web-vitals manualmente la sua mancanza creava problemi 
 ho creato il progetto avviato il server di test e ho modificato il pacchetto app.js con i dovuti file ora ho testato il contatore e funziona 
-ho creato migliorato lo stile e il codice grazie a chat gpt
+ho creato migliorato lo stile e il codice grazie anche all ausilio di chat gpt
